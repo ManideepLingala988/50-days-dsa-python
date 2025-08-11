@@ -21,7 +21,7 @@ def monotonic_array(array):
                 return False
         return True
 
-    elif i == j:  # Expect all equal
+    elif i == j: 
         for k in range(n - 1):
             if array[k] != array[k + 1]:
                 return False
