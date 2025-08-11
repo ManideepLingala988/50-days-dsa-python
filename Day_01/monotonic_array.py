@@ -11,22 +11,29 @@ Space Complexity: O(1)
 """
 
 def monotonic_array(array):
-  n=len(array)
-  i=array[0]
-  j=array[n-1]
-  if i>j:
-    for k in range(n-1):
-      if array[k]<array[k+1]:
-        return False
- elif i=j:
-    for k in range(n-1):
-      if array[k]!=array[k+1]:
-        return False
-else:
-  for k in range(n-1):
-    if array[k]>array[k+1]:
-      return True
-print(monotonic_array([1,2,3,4,5])
-      
+    n = len(array)
+    i = array[0]
+    j = array[n - 1]
 
-  
+    if i > j: 
+        for k in range(n - 1):
+            if array[k] < array[k + 1]:
+                return False
+        return True
+
+    elif i == j:  # Expect all equal
+        for k in range(n - 1):
+            if array[k] != array[k + 1]:
+                return False
+        return True
+
+    else:
+        for k in range(n - 1):
+            if array[k] > array[k + 1]:
+                return False
+        return True
+
+print(monotonic_array([1, 2, 3, 4, 5]))   
+print(monotonic_array([5, 4, 3, 2, 1]))   
+print(monotonic_array([2, 2, 2, 2]))      
+print(monotonic_array([1, 3, 2]))    
